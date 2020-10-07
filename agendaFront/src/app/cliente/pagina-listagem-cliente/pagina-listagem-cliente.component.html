@@ -1,0 +1,33 @@
+<app-cabecalho></app-cabecalho>
+
+<div class="container-fluid pt-3">
+    <div class="row">
+        <div class="col-12 pb-2">
+            <button class="btn btn-success">Novo Cliente</button>
+        </div>
+        
+        <div class="col-12">
+            <table class="table" *ngIf="this.clientes">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NOME</th>
+                        <th scope="col">EMPRESA</th>
+                        <th scope="col">AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cliente of this.clientes">
+                        <th scope="row">{{cliente.id}}</th>
+                        <td>{{cliente.nome}}</td>
+                        <td>{{cliente.empresa}}</td>
+                        <td>
+                            <button class="btn btn-warning text-white" (click)="edita(cliente)">Editar</button>
+                            <button class="btn btn-danger ml-1">Apagar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
